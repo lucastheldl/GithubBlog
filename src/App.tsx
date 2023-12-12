@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import "./App.css"
+import { Card } from "./components/Card";
 
 
 
@@ -13,7 +14,7 @@ function App() {
     getUser();
   },[])
 
-  return(<div><h1>Hello</h1></div>)
+  return(<div><Card/></div>)
   
 }
 

@@ -21,6 +21,9 @@
     outline:0;
     box-shadow: 0 0 0 2px var(--blue)
 }
+body{
+  background-color:var(--base-background);
+}
 body,input,textarea,button{
   font-family: 'Nunito', sans-serif;
 }
