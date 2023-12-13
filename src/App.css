@@ -28,14 +28,16 @@ body{
 body,input,textarea,button{
   font-family: 'Nunito', sans-serif;
 }
+.wrapper{
+  width: 864px;
+  margin: 0 auto 10rem auto;
+}
 .posts-container{
   display: flex;
   justify-content: center;
   gap: 1rem;
 
   flex-wrap: wrap;
-  width: 1120px;
-  margin: 0 auto;
 }
 .cover{
   width: 100%;

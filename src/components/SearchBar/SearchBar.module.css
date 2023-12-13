@@ -1,0 +1,35 @@
+.container{
+  display:flex;
+  gap: 0.5rem;
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+}
+
+.search_bar{
+  flex: 1;
+  background-color: var(--base-input);
+
+  padding: 15px 10px;
+  border-radius: 6px;
+  border: 2px solid var(--base-border);
+
+  &::placeholder{
+    font-size: 1rem;
+    color:var(--base-label);
+  }
+
+}
+
+.publications_info{
+  display: flex;
+  justify-content: space-between;
+}
+.publication_label{
+  color: var(--base-subtitle);
+  font-size: 1.125rem;
+}
+.publication_amount{
+  color: var(--base-span);
+  font-size: 0.875rem;
+}

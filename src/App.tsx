@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import "./App.css"
 import { Card } from "./components/Card";
 import cover from "./assets/Covercover.png"
+import { SearchBar } from "./components/SearchBar";
 
 
 
@@ -15,10 +16,14 @@ function App() {
     getUser();
   },[])
 
-  return(<div>
-    <img src={cover} className="cover"/>
-    <div className="posts-container"><Card/><Card/><Card/><Card/><Card/><Card/></div>
+  return(
+    <div>
+        <img src={cover} className="cover"/>
+        <div className="wrapper">
+        <SearchBar/>
+        <div className="posts-container"><Card/><Card/><Card/><Card/><Card/><Card/></div>
     
+      </div>
     </div>)
   
 }
