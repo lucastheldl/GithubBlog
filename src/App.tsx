@@ -3,6 +3,7 @@ import "./App.css"
 import { Card } from "./components/Card";
 import cover from "./assets/Covercover.png"
 import { SearchBar } from "./components/SearchBar";
+import { ProfileCard } from "./components/ProfileCard";
 
 
 
@@ -17,14 +18,15 @@ function App() {
   },[])
 
   return(
-    <div>
+    <>
         <img src={cover} className="cover"/>
         <div className="wrapper">
-        <SearchBar/>
+          <ProfileCard/>
+          <SearchBar/>
         <div className="posts-container"><Card/><Card/><Card/><Card/><Card/><Card/></div>
     
       </div>
-    </div>)
+    </>)
   
 }
 

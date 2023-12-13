@@ -1,0 +1,9 @@
+.card{
+  width:100%;
+  min-height: 212px;
+
+  border-radius: 10px;
+  margin: 10rem 0 5rem 0;
+
+  background-color: var(--base-profile);
+}
