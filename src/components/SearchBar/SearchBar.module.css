@@ -14,11 +14,12 @@
   border-radius: 6px;
   border: 2px solid var(--base-border);
 
+  color:var(--base-text);
+  font-size: 1rem;
   &::placeholder{
     font-size: 1rem;
     color:var(--base-label);
   }
-
 }
 
 .publications_info{
