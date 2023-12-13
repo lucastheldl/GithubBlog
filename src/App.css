@@ -26,28 +26,4 @@ body{
   background-color:var(--base-background);
   position:relative;
 }
-body,input,textarea,button{
-  font-family: 'Nunito', sans-serif;
-}
-.wrapper{
-  width: 864px;
-  margin: 0 auto 10rem auto;
-}
-.posts-container{
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
 
-  flex-wrap: wrap;
-}
-.cover{
-  position:absolute;
-  top: -150px;
-  left: 0;
-
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-
-  z-index: -10;
-}

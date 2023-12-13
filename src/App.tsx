@@ -1,9 +1,7 @@
 import { useEffect } from "react"
 import "./App.css"
-import { Card } from "./components/Card";
-import cover from "./assets/Covercover.png"
-import { SearchBar } from "./components/SearchBar";
-import { ProfileCard } from "./components/ProfileCard";
+import {BrowserRouter} from "react-router-dom"
+import { Router } from "./Router"
 
 
 
@@ -18,15 +16,9 @@ function App() {
   },[])
 
   return(
-    <>
-        <img src={cover} className="cover"/>
-        <div className="wrapper">
-          <ProfileCard/>
-          <SearchBar/>
-        <div className="posts-container"><Card/><Card/><Card/><Card/><Card/><Card/></div>
-    
-      </div>
-    </>)
+    <BrowserRouter>
+    <Router/>
+    </BrowserRouter>)
   
 }
 
