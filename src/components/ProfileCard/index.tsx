@@ -1,3 +1,9 @@
+import {
+  ArrowSquareOut,
+  Buildings,
+  GithubLogo,
+  Users,
+} from "@phosphor-icons/react";
 import styles from "./ProfileCard.module.css";
 
 export function ProfileCard() {
@@ -13,7 +19,10 @@ export function ProfileCard() {
       <div className={styles.informations}>
         <div className={styles.header}>
           <h2>Lucas Emanoel</h2>
-          <a href="#">GITHUB</a>
+          <a href="https://github.com/lucastheldl" target="blank">
+            GITHUB
+            <ArrowSquareOut size={18} />
+          </a>
         </div>
 
         <p className={styles.description}>
@@ -21,9 +30,18 @@ export function ProfileCard() {
           principalmente com React js e Unity.
         </p>
         <ul className={styles.info_list}>
-          <li>Hithub</li>
-          <li>Org</li>
-          <li>Followers</li>
+          <li>
+            <GithubLogo size={18} />
+            Github
+          </li>
+          <li>
+            <Buildings size={18} />
+            Org
+          </li>
+          <li>
+            <Users size={18} />
+            Followers
+          </li>
         </ul>
       </div>
     </div>

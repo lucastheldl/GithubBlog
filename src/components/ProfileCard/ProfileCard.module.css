@@ -29,6 +29,13 @@ img {
   color: var(--base-title);
 }
 .header a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.2rem;
+  border-radius: 6px;
+
   color: var(--blue);
   font-size: 0.75rem;
   text-decoration: none;
@@ -47,6 +54,13 @@ img {
   list-style: none;
 }
 .info_list li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
   color: var(--base-text);
   font-size: 1rem;
+}
+.info_list li svg {
+  color: var(--base-label);
 }
