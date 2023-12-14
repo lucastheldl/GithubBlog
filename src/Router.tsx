@@ -1,13 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { Post } from "./pages/Post";
 
-export function Router(){
+export function Router() {
   return (
     <Routes>
-      <Route path="/" element={< Home/>}>
-        {/* <Route path="/IgnitePomodoro/" element={<Home />} />
-        <Route path="/IgnitePomodoro/history" element={<History />} /> */}
-      </Route>
+      <Route path="/GithubBlog/" element={<Home />} />
+      <Route path="/GithubBlog/posts/:id" element={<Post />} />
     </Routes>
-  )
+  );
 }
