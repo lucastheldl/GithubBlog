@@ -55,7 +55,10 @@ export function Home() {
         )}
         <SearchBar publicationAmount={issues.length} />
         <div className={styles.posts_container}>
-          {issues.length > 0 && <Card issue={issues[0]} />}
+          {issues.length > 0 &&
+            issues.map((issue, i) => {
+              return <Card key={i} issue={issue} />;
+            })}
         </div>
       </div>
     </>
