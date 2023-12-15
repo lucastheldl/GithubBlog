@@ -5,16 +5,16 @@
 
   max-width: 416px;
   width: 100%;
-  min-height: 260px;
+  max-height: 260px;
 
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 10px;
 
   background-color: var(--base-post);
   border: 2px solid transparent;
 
   text-decoration: none;
-
+  overflow: hidden;
   &:hover {
     border: 2px solid var(--base-border);
   }

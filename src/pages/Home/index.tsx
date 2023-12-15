@@ -16,6 +16,7 @@ interface UserType {
 }
 export function Home() {
   const [user, setUser] = useState<UserType | null>();
+  const [issues, setIssues] = useState([]);
 
   async function getUser() {
     await fetch(`https://api.github.com/users/lucastheldl`)
@@ -25,9 +26,18 @@ export function Home() {
         console.log(data);
       });
   }
+  async function getRepos() {
+    await fetch(`https://api.github.com/repos/lucastheldl/GithubBlog/issues`)
+      .then((res) => res.json())
+      .then((data) => {
+        setIssues(data);
+        console.log(data);
+      });
+  }
 
   useEffect(() => {
     getUser();
+    getRepos();
   }, []);
 
   return (
@@ -43,14 +53,9 @@ export function Home() {
             bio={user.bio}
           />
         )}
-        <SearchBar />
+        <SearchBar publicationAmount={issues.length} />
         <div className={styles.posts_container}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {issues.length > 0 && <Card issue={issues[0]} />}
         </div>
       </div>
     </>
