@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export function DefaultLayout() {
   return (
-    <div>
+    <div className={styles.layout_conatiner}>
       <img src={cover} className={styles.cover} />
       <Outlet />
     </div>

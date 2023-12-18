@@ -5,7 +5,6 @@ import { Card } from "../../components/Card";
 import { ProfileCard } from "../../components/ProfileCard";
 import { SearchBar } from "../../components/SearchBar";
 //images
-import cover from "../../assets/Covercover.png";
 
 interface UserType {
   avatar_url: string;
