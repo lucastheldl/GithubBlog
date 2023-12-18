@@ -1,0 +1,11 @@
+.cover {
+  position: absolute;
+  top: -150px;
+  left: 0;
+
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+
+  z-index: -10;
+}

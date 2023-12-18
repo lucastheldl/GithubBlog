@@ -42,7 +42,6 @@ export function Home() {
 
   return (
     <>
-      <img src={cover} className={styles.cover} />
       <div className={styles.wrapper}>
         {user && (
           <ProfileCard
