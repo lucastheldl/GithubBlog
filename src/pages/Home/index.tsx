@@ -13,6 +13,9 @@ interface UserType {
   bio: string;
   followers: number;
 }
+interface SearchIssuesParams {
+  search: string;
+}
 export function Home() {
   const [user, setUser] = useState<UserType | null>();
   const [issues, setIssues] = useState([]);
@@ -33,6 +36,15 @@ export function Home() {
         console.log(data);
       });
   }
+  async function searchIssue(data: SearchIssuesParams) {
+    await fetch(
+      `https://api.github.com/search/issues?q=${
+        data.search
+      }%20repo:${"lucastheldl"}/${"GithubBlog"}`
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
 
   useEffect(() => {
     getUser();
@@ -51,7 +63,10 @@ export function Home() {
             bio={user.bio}
           />
         )}
-        <SearchBar publicationAmount={issues.length} />
+        <SearchBar
+          publicationAmount={issues.length}
+          searchIssue={searchIssue}
+        />
         <div className={styles.posts_container}>
           {issues.length > 0 &&
             issues.map((issue, i) => {

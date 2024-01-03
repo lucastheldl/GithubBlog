@@ -1,24 +1,25 @@
 import { useForm } from "react-hook-form";
 import styles from "./SearchBar.module.css";
-import { useState } from "react";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 interface SearchBarProps {
   publicationAmount: number;
+  searchIssue: (data: searchFormInputs) => void;
 }
 const searchFormSchema = z.object({
   search: z.string(),
 });
 type searchFormInputs = z.infer<typeof searchFormSchema>;
 
-export function SearchBar({ publicationAmount }: SearchBarProps) {
+export function SearchBar({ publicationAmount, searchIssue }: SearchBarProps) {
   const { register, handleSubmit } = useForm<searchFormInputs>({
     resolver: zodResolver(searchFormSchema),
   });
-  const [search, setSearch] = useState("");
 
-  function handleSearch(data: searchFormInputs) {}
+  async function handleSearch(data: searchFormInputs) {
+    searchIssue({ search: data.search });
+  }
 
   return (
     <div className={styles.container}>
