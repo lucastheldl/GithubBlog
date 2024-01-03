@@ -25,7 +25,7 @@ export function Home() {
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
-        console.log(data);
+        //console.log(data);
       });
   }
   async function getRepos() {
@@ -33,7 +33,7 @@ export function Home() {
       .then((res) => res.json())
       .then((data) => {
         setIssues(data);
-        console.log(data);
+        //console.log(data);
       });
   }
   async function searchIssue(data: SearchIssuesParams) {
@@ -43,7 +43,10 @@ export function Home() {
       }%20repo:${"lucastheldl"}/${"GithubBlog"}`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setIssues(data.items);
+        console.log(data);
+      });
   }
 
   useEffect(() => {
