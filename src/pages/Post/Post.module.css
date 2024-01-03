@@ -1,0 +1,12 @@
+.wrapper {
+  width: 864px;
+  margin: 0 auto 10rem auto;
+}
+.posts_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  flex-wrap: wrap;
+  color: var(--base-text);
+}

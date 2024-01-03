@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Post.module.css";
+import { PostHeader } from "../../components/PostHeader";
 
 interface Issue {
   number: number;
   title: string;
   body: string;
+  url: string;
 }
 
 export function Post() {
@@ -27,5 +30,14 @@ export function Post() {
     getIssueData();
   }, []);
 
-  return <>{issue && <h1>{issue.title}</h1>}</>;
+  return (
+    <>
+      {issue && (
+        <div className={styles.wrapper}>
+          <PostHeader title={issue.title} link={issue.url} />
+          <div className={styles.posts_container}>{issue.body}</div>
+        </div>
+      )}
+    </>
+  );
 }

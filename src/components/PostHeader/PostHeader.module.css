@@ -1,0 +1,55 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: start;
+
+  width: 100%;
+  min-height: 150px;
+
+  border-radius: 10px;
+  margin: 8rem 0 5rem 0;
+  padding: 1.5rem;
+
+  background-color: var(--base-profile);
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  padding: 0.2rem;
+  border-radius: 6px;
+
+  color: var(--blue);
+  font-size: 0.75rem;
+  text-decoration: none;
+  &::hover {
+    cursor: pointer;
+  }
+}
+.card h2 {
+  color: var(--base-title);
+}
+.info_list {
+  display: flex;
+  gap: 1.5rem;
+
+  list-style: none;
+}
+.info_list li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  color: var(--base-text);
+  font-size: 1rem;
+}
+.info_list li svg {
+  color: var(--base-label);
+}
