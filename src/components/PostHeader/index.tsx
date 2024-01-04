@@ -1,20 +1,39 @@
 import {
   ArrowLeft,
   ArrowSquareOut,
-  Buildings,
+  Calendar,
   GithubLogo,
   Users,
 } from "@phosphor-icons/react";
 import styles from "./PostHeader.module.css";
 import { Link } from "react-router-dom";
+import { differenceInMinutes, formatDistance, subMinutes } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 interface PostHeaderProps {
   title: string;
   login: string;
   followers: number;
+  dateTime: string;
 }
 
-export function PostHeader({ title, login, followers }: PostHeaderProps) {
+export function PostHeader({
+  title,
+  login,
+  followers,
+  dateTime,
+}: PostHeaderProps) {
+  const dateDifference = differenceInMinutes(new Date(), new Date(dateTime));
+
+  const date = formatDistance(
+    subMinutes(new Date(), dateDifference),
+    new Date(),
+    {
+      addSuffix: true,
+      locale: ptBR,
+    }
+  );
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>
@@ -37,8 +56,8 @@ export function PostHeader({ title, login, followers }: PostHeaderProps) {
           {login}
         </li>
         <li>
-          <Buildings size={18} />
-          Org
+          <Calendar size={18} />
+          {date}
         </li>
         <li>
           <Users size={18} />

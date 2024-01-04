@@ -9,6 +9,7 @@ interface Issue {
   title: string;
   body: string;
   url: string;
+  created_at: string;
 }
 interface UserType {
   avatar_url: string;
@@ -40,6 +41,7 @@ export function Post() {
         .then((res) => res.json())
         .then((data) => {
           setIssue(data);
+          console.log(data);
         });
     }
 
@@ -55,6 +57,7 @@ export function Post() {
               title={issue.title}
               login={user.login}
               followers={user.followers}
+              dateTime={issue.created_at}
             />
           )}
 
