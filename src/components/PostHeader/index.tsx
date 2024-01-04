@@ -10,12 +10,11 @@ import { Link } from "react-router-dom";
 
 interface PostHeaderProps {
   title: string;
-  //login: string;
-  //followers: number;
-  link: string;
+  login: string;
+  followers: number;
 }
 
-export function PostHeader({ title, link }: PostHeaderProps) {
+export function PostHeader({ title, login, followers }: PostHeaderProps) {
   return (
     <div className={styles.card}>
       <div className={styles.header}>
@@ -35,6 +34,7 @@ export function PostHeader({ title, link }: PostHeaderProps) {
       <ul className={styles.info_list}>
         <li>
           <GithubLogo size={18} />
+          {login}
         </li>
         <li>
           <Buildings size={18} />
@@ -42,7 +42,7 @@ export function PostHeader({ title, link }: PostHeaderProps) {
         </li>
         <li>
           <Users size={18} />
-          seguidores
+          {followers} seguidores
         </li>
       </ul>
     </div>
