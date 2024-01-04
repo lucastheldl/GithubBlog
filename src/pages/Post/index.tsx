@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Post.module.css";
 import { PostHeader } from "../../components/PostHeader";
+import Markdown from "react-markdown";
 
 interface Issue {
   number: number;
@@ -22,7 +23,6 @@ export function Post() {
 
   const [issue, setIssue] = useState<Issue | null>(null);
   const [user, setUser] = useState<UserType | null>();
-  const updatedText = issue?.body.split("**").join("");
 
   useEffect(() => {
     async function getUser() {
@@ -30,7 +30,6 @@ export function Post() {
         .then((res) => res.json())
         .then((data) => {
           setUser(data);
-          //console.log(data);
         });
     }
     getUser();
@@ -59,7 +58,7 @@ export function Post() {
             />
           )}
 
-          <div className={styles.posts_container}>{updatedText}</div>
+          <Markdown className={styles.posts_container}>{issue.body}</Markdown>
         </div>
       )}
     </>
