@@ -5,6 +5,7 @@ interface CardProps {
   issue: { number: number; title: string; body: string };
 }
 export function Card({ issue }: CardProps) {
+  const updatedBody = issue.body.split("**").join("").replace("###", "");
   return (
     <Link to={`/GithubBlog/posts/${issue.number}`} className={styles.container}>
       <div className={styles.card_header}>
@@ -12,7 +13,7 @@ export function Card({ issue }: CardProps) {
         <span className={styles.date}>Datetime</span>
       </div>
       <div className={styles.body}>
-        <p>{issue.body.substring(0, 235) + "..."}</p>
+        <p>{updatedBody.substring(0, 235) + "..."}</p>
       </div>
     </Link>
   );
